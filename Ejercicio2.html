@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenación y Filtrado</title>
+</head>
+<body>
+
+<script>
+
+// Función para ordenar y filtrar valores numéricos
+function ordenarYFiltrarNumeros(arr) {
+    // Implementación del algoritmo de burbuja para ordenar el arreglo
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Intercambiar elementos si están en el orden incorrecto
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+    }
+
+    // Filtrar valores numéricos
+    const numerosFiltrados = arr.filter(elemento => typeof elemento === 'number');
+
+    // Imprimir el resultado final en consola
+    console.log("Arreglo ordenado y filtrado:", numerosFiltrados);
+}
+
+// Arreglo de prueba
+const inicio = ["unacadena", 3, 9, 1, 10, 500, 1, 10, true];
+
+// Llamada a la función con el arreglo de prueba
+ordenarYFiltrarNumeros(inicio);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie Fibonacci</title>
+</head>
+<body>
+
+<div id="resultado"></div>
+
+<script>
+function imprimirSerieFibonacci(numeroDeElementos) {
+    let a = 0, b = 1;
+    let resultado = '';
+
+    for (let i = 0; i < numeroDeElementos; i++) {
+        resultado += a + ', ';
+        [a, b] = [b, a + b];
+    }
+
+    // Actualizar el contenido del elemento HTML con id "resultado"
+    document.getElementById('resultado').textContent = resultado.slice(0, -2); // Eliminar la última coma y espacio
+}
+
+// El profesor manipulará esta variable
+let numeroDeElementos = 4;  // Puedes cambiar este valor según lo que desees
+
+// Llamada a la función para imprimir la serie Fibonacci
+imprimirSerieFibonacci(numeroDeElementos);
+</script>
+
+</body>
+</html>
